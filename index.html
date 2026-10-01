@@ -11,4 +11,26 @@
     <div class="cartao-aplicacao">
         <header class="cabecalho-aplicacao">
             <h1>Minhas 
-                
+                <button class="botao-icone" id="botao-alternar-tema">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </header>
+        <div class="caixa-entrada">
+            <input type="text" id="campo-tarefa" placeholder="O que vamos fazer hoje?..." maxlength="40">
+            <button class="botao-principal" id="botao-adicionar">
+                <i class="fa-solid fa-plus"></i> Adicionar
+            </button>
+        </div>
+        <ul class="lista-tarefas" id="lista-tarefas">
+            <!-- As tarefas serão inseridas dinamicamente
+             via JavaScript -->
+        </ul>
+        <footer class="rodape-aplicacao">
+            <span id="contador-tarefas">0 tarefas na lista</span>
+        </footer>
+    </div>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
