@@ -1,0 +1,159 @@
+/* Variáveis CSS - facilitar o uso de temas para formatação */
+:root{
+    --gradiente-fundo:linear-gradient(134deg, #a8edea 0%, #fed6e3 100%);
+    --fundo-cartao: #fff;
+    --cor-texto: #2d3748;
+    --cor-primaria: #6c5ce7;
+    --cor-primaria-destaque: #5b4bc4;
+    --cor-borda: #edf2f7;
+    --cor-perigo: #ff7675;
+    --cor-concluido: #a0aec0;
+}
+
+/* Modo escuro (ativado via classe no body) */
+body.modo-escuro{
+    --gradiente-fundo: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    --fundo-cartao: #1a202c;
+    --cor-texto: #f7fafc;
+    --cor-borda: #4a5568;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background 0.3s, color 0.3;
+}
+
+body{
+    background: var(--gradiente-fundo);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.cartao-aplicacao{
+    background: var(--fundo-cartao);
+    color: var(--cor-texto);
+    width: 100%;
+    max-width: 420px;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.cabecalho-aplicacao{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.cabecalho-aplicacao h1{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.botao-icone{
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--cor-texto);
+    cursor: pointer;
+}
+
+.caixa-entrada{
+    display: flex;
+    gap: 10x;
+    margin-bottom: 20px;
+}
+
+input[type="text"]{
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid var(--cor-borda);
+    border-radius: 12px;
+    outline: none;
+    font-size: 0.95rem;
+    background: transparent;
+    color: var(--cor-texto);
+}
+
+input[type="text"]:focus{
+    border-color: var(--cor-primaria);
+}
+
+.botao-principal{
+    background: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s, background 0.2s;
+}
+
+.botao-principal:hover{
+    background: var(--cor-primaria-destaque);
+    transform: translateY(-2px);
+}
+
+.lista-tarefas{
+    list-style: none;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.item-tarefa{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    background: var(--cor-borda);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    animation: aparecer 0.3s ease;
+}
+
+.item-tarefa.concluido span{
+    text-decoration: line-through;
+    color: var(--cor-concluido);
+
+}
+
+.acoes-tarefa{
+    display: flex;
+    gap: 8px;
+}
+
+.botao-acao{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--cor-texto);
+}
+
+.botao-acao.excluir:hover{
+    color: var(--cor-perigo);
+}
+
+.rodape-aplicacao{
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: var(--cor-concluido);
+    text-align: center;
+}
+
+@keyframes aparecer{
+    from{
+        opacity: 0; transform: translateY(10px)
+    }
+    to{
+        opacity: 1; transform: translateY(0);
+    }
+}
